@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Reproductor</string>
+    <string name="bienvenida">Bienvenid@!</string>
+    <string name="iniciar">Para continuar inicie sesión</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="cerrar">Cerrar Sesion</string>
+    <string name="radio">Radio</string>
+</resources>

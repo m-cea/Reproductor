@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "753967530369",
+    "project_id": "reproductor-3951c",
+    "storage_bucket": "reproductor-3951c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753967530369:android:802766c6b5010085152880",
+        "android_client_info": {
+          "package_name": "ar.edu.unsada.reproductor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753967530369-akiek6e3kvatjj8lqcq9i9q3g6n2sa82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKoSsEftBwr0AUrGGJHq7BBXqZibZjd0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753967530369-akiek6e3kvatjj8lqcq9i9q3g6n2sa82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
