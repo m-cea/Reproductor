@@ -3,9 +3,11 @@ package ar.edu.unsada.reproductor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -27,13 +29,24 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
+    private Button atajo;
     private TextView mRespuesta;
     private SignInButton mBtnGoogle;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        atajo = findViewById(R.id.button2);
+
+        atajo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                irRadio();
+            }
+        });
 
         // [START config_signin]
         // Configure Google Sign In

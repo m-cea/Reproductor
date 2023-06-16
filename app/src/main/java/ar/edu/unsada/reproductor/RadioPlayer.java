@@ -21,6 +21,12 @@ public class RadioPlayer {
         }
     }
 
+    public void pauseRadio() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
+    }
+
     public void stopRadio() {
         if (mediaPlayer != null) {
             mediaPlayer.stop();
