@@ -39,15 +39,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        atajo = findViewById(R.id.button2);
-
-        atajo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                irRadio();
-            }
-        });
-
         // [START config_signin]
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

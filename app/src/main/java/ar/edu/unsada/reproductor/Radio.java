@@ -55,8 +55,7 @@ public class Radio extends AppCompatActivity {
         actual.setVisibility(View.INVISIBLE);
 
         //Sector información de usuario y cerrar
-        usuario.setText("Bienvenid@ \n");
-        //usuario.setText("Bienvenid@ \n" + mAuth.getCurrentUser().getDisplayName());
+        usuario.setText("Bienvenid@ \n" + mAuth.getCurrentUser().getDisplayName());
 
         cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
