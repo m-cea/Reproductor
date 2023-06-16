@@ -52,6 +52,7 @@ public class Radio extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         radioPlayer = new RadioPlayer();
         logo.setVisibility(View.VISIBLE);
+        actual.setVisibility(View.INVISIBLE);
 
         //Sector información de usuario y cerrar
         usuario.setText("Bienvenid@ \n");
@@ -94,7 +95,7 @@ public class Radio extends AppCompatActivity {
                 pause.setVisibility(View.GONE);
                 stop.setVisibility(View.GONE);
                 radio.setText("");
-                actual.setVisibility(View.GONE);
+                actual.setVisibility(View.INVISIBLE);
             }
         });
 
