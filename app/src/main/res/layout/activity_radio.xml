@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:background="@color/crimson_sky">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,15 +36,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|right"
+                android:backgroundTint="@color/indigo"
                 android:text="Cerrar Sesión" />
 
         </LinearLayout>
 
-        <TextView
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/radio"
+            tools:srcCompat="@drawable/Logo" />
+
+        <TextView
+            android:id="@+id/nombreRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="25dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@drawable/Actual" />
 
         <Space
             android:layout_width="match_parent"
@@ -53,6 +71,7 @@
             android:id="@+id/play"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/indigo"
             android:text="@string/play" />
 
         <Space
@@ -63,7 +82,10 @@
             android:id="@+id/pause"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/indigo"
             android:text="@string/pause" />
+
+
 
 
     </LinearLayout>
