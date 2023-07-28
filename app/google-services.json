@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "753967530369-akiek6e3kvatjj8lqcq9i9q3g6n2sa82.apps.googleusercontent.com",
+          "client_id": "753967530369-lp0rhhe925755o3kuqs98e0e75jl4c2a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ar.edu.unsada.reproductor",
+            "certificate_hash": "f0f6e2b14244cf797063dc431a692b3c9595f8b6"
+          }
+        },
+        {
+          "client_id": "753967530369-4sfp4uoerilt3stle7h9bcftob9sbkkf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "753967530369-akiek6e3kvatjj8lqcq9i9q3g6n2sa82.apps.googleusercontent.com",
+              "client_id": "753967530369-4sfp4uoerilt3stle7h9bcftob9sbkkf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
