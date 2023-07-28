@@ -12,6 +12,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,18 +21,31 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
+
 public class Radio extends AppCompatActivity {
 
-    private Button cerrar, play, pause, stop;
-    private TextView usuario, radio;
+    private Button cerrar;
+    private TextView usuario;
     private FirebaseAuth mAuth;
     private RadioPlayer radioPlayer;
-    private String streamUrl = "https://24073.live.streamtheworld.com/ROCKANDPOP_SC";
-    private ImageView actual, logo;
+    private WebView pagina;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,18 +56,11 @@ public class Radio extends AppCompatActivity {
         //Conexion vista-logica
         cerrar = findViewById(R.id.btn_cerrar);
         usuario = findViewById(R.id.nombreUsuario);
-        play = findViewById(R.id.play);
-        pause = findViewById(R.id.pause);
-        radio = findViewById(R.id.nombreRadio);
-        stop = findViewById(R.id.stop);
-        logo = findViewById(R.id.logo);
-        actual = findViewById(R.id.actual);
+        pagina = findViewById(R.id.webview);
 
         //Crea instancia de usuario y de radioPlayer
         mAuth = FirebaseAuth.getInstance();
         radioPlayer = new RadioPlayer();
-        logo.setVisibility(View.VISIBLE);
-        actual.setVisibility(View.INVISIBLE);
 
         //Sector información de usuario y cerrar
         usuario.setText("Bienvenid@ \n" + mAuth.getCurrentUser().getDisplayName());
@@ -65,45 +73,17 @@ public class Radio extends AppCompatActivity {
             }
         });
 
-        //Play y pause
-        play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                radioPlayer.playRadio(streamUrl);
-                radio.setText("Radio Esta");
-                play.setVisibility(View.GONE);
-                pause.setVisibility(View.VISIBLE);
-                stop.setVisibility(View.VISIBLE);
-                actual.setVisibility(View.VISIBLE);
-            }
-        });
-        pause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                radioPlayer.pauseRadio();
-                play.setVisibility(View.VISIBLE);
-                pause.setVisibility(View.GONE);
-            }
-        });
+        // Cargar el contenido web desde servicio web Flask
+        String url = "http://192.168.0.103:5000/";
+        pagina.loadUrl(url);
 
-        stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                radioPlayer.stopRadio();
-                play.setVisibility(View.VISIBLE);
-                pause.setVisibility(View.GONE);
-                stop.setVisibility(View.GONE);
-                radio.setText("");
-                actual.setVisibility(View.INVISIBLE);
-            }
-        });
-
+        // WebViewClient para manejar la navegación dentro de la WebView
+        pagina.setWebViewClient(new WebViewClient());
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        radioPlayer.stopRadio();
         logout();
     }
 

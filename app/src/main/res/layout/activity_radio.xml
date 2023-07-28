@@ -40,66 +40,10 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/logo"
+        <WebView
+            android:id="@+id/webview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/pause"
-            android:src="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/nombreRadio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30sp"
-            android:textSize="25dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:id="@+id/actual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:contentDescription="@string/pause"
-            android:src="@drawable/actual" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/play"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/indigo"
-            android:layout_margin="10dp"
-            android:text="@string/play" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/pause"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/indigo"
-            android:visibility="gone"
-            android:layout_margin="10dp"
-            android:text="@string/pause" />
-
-        <Button
-            android:id="@+id/stop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/indigo"
-            android:text="STOP" />
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>
