@@ -24,8 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity extends AppCompatActivity {
-
+public class Login extends AppCompatActivity {
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         // [START config_signin]
         // Configure Google Sign In
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void irRadio() {
-        Intent i = new Intent(MainActivity.this, Radio.class);
+        Intent i = new Intent(Login.this, Tabs.class);
         startActivity(i);
         finish();
     }
