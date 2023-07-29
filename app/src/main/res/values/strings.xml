@@ -6,4 +6,5 @@
     <string name="pause">Pause</string>
     <string name="cerrar">Cerrar Sesion</string>
     <string name="radio">Radio</string>
+    <string name="buscar">Buscar...</string>
 </resources>

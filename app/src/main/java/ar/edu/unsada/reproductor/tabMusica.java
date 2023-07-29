@@ -21,7 +21,6 @@ public class tabMusica extends Fragment {
     private Button cerrar;
     private TextView usuario;
     private FirebaseAuth mAuth;
-    private RadioPlayer radioPlayer;
     private WebView pagina;
 
     @SuppressLint("MissingInflatedId")
