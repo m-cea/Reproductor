@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/crimson_sky"
+    tools:context=".Tabs">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/configuracion"
+            android:textColor="@color/indigo"
+            android:textSize="30sp"/>
+
+           <Switch
+               android:id="@+id/timerApagado"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="20sp"
+               android:text="@string/timerA" />
+
+           <TextView
+               android:id="@+id/textHoraA"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:textSize="16sp"
+               android:text="@string/horaA"
+               android:visibility="gone"/>
+
+
+           <TimePicker
+               android:id="@+id/timePickerA"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:visibility="gone"/>
+
+           <Switch
+               android:id="@+id/timerEncendido"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="20sp"
+               android:text="@string/timerE" />
+
+           <TextView
+               android:id="@+id/textHoraE"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:textSize="16sp"
+               android:visibility="gone"
+               android:text="@string/horaE" />
+
+           <TimePicker
+               android:id="@+id/timePickerE"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:visibility="gone"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:id="@+id/contacto"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textSize="20sp"
+                   android:text="@string/contacto" />
+
+               <ImageButton
+                   android:id="@+id/mail"
+                   android:layout_width="wrap_content"
+                   android:layout_height="20dp"
+                   android:src="@android:drawable/ic_dialog_email" />
+           </LinearLayout>
+
+
+       </LinearLayout>
+</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

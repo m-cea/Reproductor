@@ -47,7 +47,7 @@ public class Tabs extends AppCompatActivity {
 
         pagerAdapter.addFragment(new tabRadio(), "Radio");
         pagerAdapter.addFragment(new tabMusica(), "Musica");
-        //pagerAdapter.addFragment(new tabConfig(), "Configuración");
+        pagerAdapter.addFragment(new tabConfig(), "Configuración");
 
         // Configura los colores del texto de las pestañas activas e inactivas
         int colorTabTextActive = ContextCompat.getColor(this, R.color.crimson_sky);
@@ -64,8 +64,11 @@ public class Tabs extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         //Saludo al usuario
-        usuario.setText("Bienvenid@ \n" + user.getDisplayName());
-
+        try {
+            usuario.setText("Bienvenid@ \n" + user.getDisplayName());
+        } catch (Exception e){
+            usuario.setText("Modo de prueba");
+        }
         //Cerrar Sesion
         cerrar.setOnClickListener(new View.OnClickListener() {
             @Override

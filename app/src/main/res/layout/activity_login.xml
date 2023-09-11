@@ -68,6 +68,12 @@
             android:text=""
             android:textSize="12dp" />
 
+        <Button
+            android:id="@+id/atajo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atajo" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

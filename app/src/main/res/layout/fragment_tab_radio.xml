@@ -3,21 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Principal">
+    tools:context=".Tabs">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-                <SearchView
-                    android:id="@+id/busquedaRadio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/lightblue"
-                    android:queryHint="@string/buscar">
-
-                </SearchView>
 
                 <WebView
                     android:id="@+id/webRadio"

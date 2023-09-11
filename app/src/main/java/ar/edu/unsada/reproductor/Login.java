@@ -31,6 +31,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class Login extends AppCompatActivity {
         private static final int RC_SIGN_IN = 9001;
         private GoogleSignInClient mGoogleSignInClient;
+        private Button atajo;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,14 @@ public class Login extends AppCompatActivity {
                     .build();
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-
+            atajo = findViewById(R.id.atajo);
+            atajo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(Login.this, Tabs.class);
+                    startActivity(i);
+                }
+            });
         }
 
         // Método para iniciar el inicio de sesión con Google
@@ -102,4 +110,6 @@ public class Login extends AppCompatActivity {
                         }
                     });
         }
+
+
     }

@@ -10,6 +10,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +27,7 @@ public class tabMusica extends Fragment {
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflar el diseño del Fragment (por ejemplo, activity_radio.xml)
+        // Inflar el diseño del Fragment
         View view = inflater.inflate(R.layout.fragment_tab_musica, container, false);
 
         // Aquí puedes obtener referencias a las vistas dentro del diseño del Fragment
@@ -37,7 +38,8 @@ public class tabMusica extends Fragment {
         pagina = view.findViewById(R.id.webMusica);
 
         // Cargar el contenido web desde servicio web Flask
-        String url = "http://192.168.0.103:5000/Musica";
+        String ip = "192.168.1.27:5000";
+        String url = "http://" + ip +"/Musica";
         pagina.loadUrl(url);
 
         // WebViewClient para manejar la navegación dentro de la WebView
@@ -53,7 +55,11 @@ public class tabMusica extends Fragment {
     }
 
     private void logout() {
-        mAuth.signOut();
+        try{
+            mAuth.signOut();
+        }catch(Exception e){
+            Toast.makeText(requireContext(), "Se encuentra en modo de prueba", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void irMain() {
