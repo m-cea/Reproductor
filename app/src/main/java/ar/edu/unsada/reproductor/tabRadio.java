@@ -58,13 +58,4 @@ public class tabRadio extends Fragment {
         return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-    private void irMain() {
-        Intent i = new Intent(this.getContext(), Login.class);
-        startActivity(i);
-    }
 }

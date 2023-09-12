@@ -47,23 +47,4 @@ public class tabMusica extends Fragment {
 
         return view;
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        logout();
-    }
-
-    private void logout() {
-        try{
-            mAuth.signOut();
-        }catch(Exception e){
-            Toast.makeText(requireContext(), "Se encuentra en modo de prueba", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void irMain() {
-        Intent i = new Intent(this.getContext(), Login.class);
-        startActivity(i);
-    }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reproductor</string>
+    <string name="bienvenida">Welcome!</string>
+    <string name="iniciar">Please log in to continue</string>
+    <string name="cerrar">Log out</string>
+    <string name="configuracion">Settings</string>
+    <string name="timerA">Schedule shutdown</string>
+    <string name="horaA">Select shutdown time</string>
+    <string name="contacto">Contact us</string>
+</resources>
