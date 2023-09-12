@@ -168,22 +168,16 @@ public class tabConfig extends Fragment {
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Crear un Intent con la acción ACTION_SENDTO
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-
-                // Especificar el URI de correo electrónico (con la dirección deseada)
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("message/rfc822");
                 Uri uri = Uri.parse("mailto:" + "mariamartaplaysense@gmail.com");
                 intent.setData(uri);
-
-                // Agregar un asunto (opcional)
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Quiero informar");
-
-                // Agregar el contenido del correo (opcional)
                 intent.putExtra(Intent.EXTRA_TEXT, "Hola equipo desarrollador! Quiero comentarles que...");
 
-                // Verificar si hay una aplicación de correo electrónico disponible para manejar el intent
-                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);
+                Intent chooser = Intent.createChooser(intent, "Elija una aplicación de correo");
+                if (chooser.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(chooser);
                 } else {
                     Toast.makeText(requireContext(), "No se dispone de app para envío de correo", Toast.LENGTH_SHORT).show();
                 }
